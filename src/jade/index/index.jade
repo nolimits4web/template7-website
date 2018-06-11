@@ -14,9 +14,9 @@ html
       .header-inner
         .header-title <span>{{</span>Template7<span>}}</span>
         .header-subtitle Mobile-first JavaScript Template Engine
-        p.download 
+        p.download
           a(href="https://github.com/nolimits4web/template7/releases") Download
-        p.release MIT Licensed, v1.3.5 released on January 22, 2018 | 
+        p.release MIT Licensed, v1.3.6 released on June 11, 2018 |
           a(href="https://github.com/nolimits4web/template7/blob/master/CHANGELOG.md", target="_blank") Changelog
         p.github-buttons
           | <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=nolimits4web&repo=template7&type=watch&count=true" width="100" height="20"></iframe>
@@ -31,7 +31,7 @@ html
         | <a class="addthis_counter addthis_pill_style"></a>
         | </div>
         | <!-- AddThis Button END -->
-        span.flattr-button 
+        span.flattr-button
           a(target="_blank", href="https://flattr.com/submit/auto?\
               user_id=nolimits4web&url=http://www.idangero.us/template7/&title=Template7&\
               description=Mobile-first JavaScript Template Engine&language=en_GB&\
@@ -59,7 +59,7 @@ html
           |     &lt;body&gt;
           |         ...
           |     &lt;/body&gt;
-          | &lt;/html&gt;          
+          | &lt;/html&gt;
       h2 Templates
       p Template7 templates looks like Handlebars templates, it is like regular HTML but with embedded handlebars expressions:
       pre
@@ -74,16 +74,16 @@ html
           |     &lt;/li&gt;
           |     {{/each}}
           |   &lt;/ul&gt;
-          | &lt;/div&gt; 
+          | &lt;/div&gt;
       h2 Expressions syntax
       p Template7 support expressions with the following syntax:
       h4 Variables:
       ul
-        li 
+        li
           p <code>{{title}}</code> - plain variable. Outputs "title" variable in current context
-        li 
+        li
           p <code>{{../title}}</code> - plain variable. Outputs "title" variable in parent context
-        li 
+        li
           p <code>{{../../title}}</code> - plain variable. Outputs "title" variable in parent context of parent context
         li
           p <code>{{this}}</code> - plain variable. Outputs variable equals to current context
@@ -122,10 +122,10 @@ html
       pre
         code
           | var template = $$('#template').html();
-          | 
+          |
           | // compile it with Template7
           | var compiledTemplate = Template7.compile(template);
-          | 
+          |
           | // Now we may render our compiled template by passing required context
           | var context = {
           |     firstName: 'John',
@@ -135,7 +135,7 @@ html
       p Now, <code>html</code> variable will contain:
       pre
         code &lt;p&gt;Hello, my name is John Doe&lt;/p&gt;
-      
+
       h2 Built-In Helpers
       p Helpers in Template7 are like predefined functions that do something with passed context.
       h4 {{#each}}...{{else}}...{{/each}}
@@ -166,8 +166,8 @@ html
                   | &lt;ul&gt;
                   |   {{#each people}}
                   |   &lt;li&gt;{{firstName}} {{lastName}}&lt;/li&gt;
-                  |   {{/each}}    
-                  | &lt;/ul&gt;          
+                  |   {{/each}}
+                  | &lt;/ul&gt;
             td
               pre
                 code
@@ -182,7 +182,7 @@ html
                   |       lastName: 'Johnson'
                   |     },
                   |   ]
-                  | }      
+                  | }
             td
               pre
                 code
@@ -190,7 +190,7 @@ html
                   | &lt;ul&gt;
                   |   &lt;li&gt;John Doe&lt;/li&gt;
                   |   &lt;li&gt;Mark Johnson&lt;/li&gt;
-                  | &lt;/ul&gt;    
+                  | &lt;/ul&gt;
           tr
             td
               pre
@@ -199,14 +199,14 @@ html
                   | &lt;ul&gt;
                   |   {{#each people}}
                   |   &lt;li&gt;{{@index}}. {{this}}&lt;/li&gt;
-                  |   {{/each}}    
-                  | &lt;/ul&gt;          
+                  |   {{/each}}
+                  | &lt;/ul&gt;
             td
               pre
                 code
                   | {
                   |   people : ['John Doe', 'Mark Johnson']
-                  | }      
+                  | }
             td
               pre
                 code
@@ -214,7 +214,7 @@ html
                   | &lt;ul&gt;
                   |   &lt;li&gt;0. John Doe&lt;/li&gt;
                   |   &lt;li&gt;1. Mark Johnson&lt;/li&gt;
-                  | &lt;/ul&gt;  
+                  | &lt;/ul&gt;
           td(colspan="3") Iterate through Object properties
           tr
             td
@@ -331,7 +331,7 @@ html
                   | &lt;p&gt;I have hobby&lt;/p&gt;
                   | {{else}}
                   | &lt;p&gt;I don't have hobby&lt;/p&gt;
-                  | {{/if}}                  
+                  | {{/if}}
             td
               pre
                 code
@@ -379,7 +379,7 @@ html
                   | &lt;p&gt;I have hobby&lt;/p&gt;
                   | {{else}}
                   | &lt;p&gt;I don't have hobby&lt;/p&gt;
-                  | {{/unless}}                  
+                  | {{/unless}}
             td
               pre
                 code
@@ -393,7 +393,7 @@ html
                   | &lt;p&gt;Hello, my name is John Doe.&lt;/p&gt;
                   | &lt;p&gt;I have hobby&lt;/p&gt;
       h4 {{#with}}...{{/with}}
-      p {{#with}} helper changes rendering context to the passed context:            
+      p {{#with}} helper changes rendering context to the passed context:
       table.template7-examples
         thead
           tr
@@ -452,7 +452,7 @@ html
                   |       name: 'Mark Johnson',
                   |       age: 21
                   |     }
-                  |   ]  
+                  |   ]
                   | }
             td
               pre
@@ -620,13 +620,13 @@ html
       p Template7 allows to register custom helpers with the following method:
       .method-wrap
         p
-          span.method Template7.registerHelper(<span>name</span>, <span>helper</span>) 
+          span.method Template7.registerHelper(<span>name</span>, <span>helper</span>)
         ul.method-parameters
           li
-            span.parameter name - 
+            span.parameter name -
             | <span class="parameter-type">string</span> - helper name
           li
-            span.parameter helper - 
+            span.parameter helper -
             | <span class="parameter-type">function</span> - helper function to handle passed context
       p Helper function could accepts as many arguments as required, arguments could be context, strings and hash data.
       p Let's look how to register helper on example of simple {{#if}} helper:
@@ -642,10 +642,10 @@ html
           |     "inverse" - method to pass helper block inverse ({{else}}) content further to compilier
           |     "data" - contains additional expression data, like @index for arrays or @key for object
           |   */
-          | 
+          |
           |   // First we need to check is the passed context is function
           |   if (typeof condition === 'function') condition = condition.call(this);
-          | 
+          |
           |   // If context condition
           |   if (condition) {
           |     // We need to pass block content further to compilier with the same context and the same data:
@@ -655,22 +655,22 @@ html
           |     // We need to pass block inverse ({{else}}) content further to compilier with the same context and the same data:
           |     options.inverse(this, options.data);
           |   }
-          | }); 
+          | });
       p Or on example of plain {{join}} helper:
       pre
         code
           | Template7.registerHelper('join', function (arr, options) {
           |   // First we need to check is the passed arr argument is function
           |   if (typeof arr === 'function') arr = arr.call(this);
-          | 
-          |   /* 
+          |
+          |   /*
           |     Passed delimiter is in the options.hash object:
           |     console.log(options.hash) -> {delimiter: ', '}
           |   */
-          | 
+          |
           |   // And return joined array
           |   return arr.join(options.hash.delimiter);
-          | });          
+          | });
       p Or we can create helper to create <a href="http://www.idangero.us/framework7/docs/list-view.html#list-view-layout" target="_blank">Framework7's list-block</a> link to work with this syntax:
       pre
         code
@@ -702,7 +702,7 @@ html
                   |   &lt;ul&gt;
                   |     {{#each links}}
                   |     {{link url title target="_blank"}}
-                  |     {{/each}}    
+                  |     {{/each}}
                   |   &lt;/ul&gt;
                   | &lt;/div&gt;
             td
@@ -748,13 +748,13 @@ html
       p Template7 allows to remove custom helpers with the following method:
       .method-wrap
         p
-          span.method Template7.unregisterHelper(<span>name</span>) 
+          span.method Template7.unregisterHelper(<span>name</span>)
         ul.method-parameters
           li
-            span.parameter name - 
+            span.parameter name -
             | <span class="parameter-type">string</span> - helper name
       h2 Global Context
-      p Template7 also supports global context which is accessible from any context. 
+      p Template7 also supports global context which is accessible from any context.
       p We can specify it in <code>Template7.global</code> property:
       pre
         code
@@ -782,10 +782,10 @@ html
           |             name: 'Kyle',
           |             hobby: ['Travel', 'Puzzles']
           |         },
-          |  
+          |
           |     ],
           |     showHobby: true
-          | }    
+          | }
       pre
         code
           | {{#each persons}}
@@ -798,28 +798,28 @@ html
           |             {{/each}}
           |         &lt;/ul&gt;
           |     {{/if}}
-          | {{/each}} 
+          | {{/each}}
       h2 Partials
       p Template7 allows to reuse template using through partials. Partials are normal usual Template7 templates that may be called by other templates.
       p We can register and unregister partials using the following methods:
       .method-wrap
         p
-          span.method Template7.registerPartial(<span>name</span>, <span>template</span>) 
+          span.method Template7.registerPartial(<span>name</span>, <span>template</span>)
           | - register partial
         ul.method-parameters
           li
-            span.parameter name - 
+            span.parameter name -
             | <span class="parameter-type">string</span> - partial name
           li
-            span.parameter helper - 
+            span.parameter helper -
             | <span class="parameter-type">string</span> - partial template
       .method-wrap
         p
-          span.method Template7.unregisterPartial(<span>name</span>) 
+          span.method Template7.unregisterPartial(<span>name</span>)
           | - unregister partial
         ul.method-parameters
           li
-            span.parameter name - 
+            span.parameter name -
             | <span class="parameter-type">string</span> - partial name
       p Then we can use our partials using special helper <code>{{&gt; "partialName"}}</code>
       p <b>Template:</b>
@@ -870,7 +870,7 @@ html
           | }
       p <b>And we will get the following output:</b>
       pre
-        code         
+        code
           | &lt;ul class="users"&gt;
           |     &lt;li&gt;
           |         &lt;h2&gt;John Doe&lt;/h2&gt;
@@ -890,18 +890,18 @@ html
           |         &lt;h2&gt;Kate Doe&lt;/h2&gt;
           |         &lt;p&gt;Donec sodales euismod augue&lt;/p&gt;
           |     &lt;/li&gt;
-          | &lt;/ul&gt;    
-      h2 Recursive Partials 
+          | &lt;/ul&gt;
+      h2 Recursive Partials
       p We can even use partials to make recursive templates, like nested comments:
       pre
         code
           | // Simple template with just a partial
           | var template = '{{&gt; "comments"}}'
-          | 
+          |
           | // Register partial
           | Template7.registerPartial(
-          |     'comments', 
-          |     '&lt;ul&gt;' + 
+          |     'comments',
+          |     '&lt;ul&gt;' +
           |         '{{#each comments}}' +
           |             '&lt;li&gt;' +
           |             '&lt;h2&gt;{{author}}&lt;/h2&gt;' +
@@ -911,11 +911,11 @@ html
           |         '{{/each}}' +
           |     '&lt;/ul&gt;'
           | );
-          | 
-          | // Compile template 
+          |
+          | // Compile template
           | var compiledTemplate = Template7.compile(template);
-          |  
-          | // Render template 
+          |
+          | // Render template
           | var output = compiledTemplate({
           |     comments: [
           |         {
@@ -960,26 +960,26 @@ html
           |         &lt;h2&gt;Jane Doe&lt;/h2&gt;
           |         &lt;p&gt;Donec sodales euismod augue&lt;/p&gt;
           |     &lt;/li&gt;
-          | &lt;/ul&gt;          
+          | &lt;/ul&gt;
       h2 Performance Tips
       p Template7 is fast and you can make it even faster in your apps. The slowest part (but still very fast in T7) in compilation/rendering process is the compilation from string to pure JS function when you do <code>Template7.compile()</code>. So don't compile the same templates multiple times, one time will be enough:
       pre
         code
           | // Begin of your app
-          | 
+          |
           | // Compile templates once on app load/init
           | var searchTemplate = $('script#search-template').html();
           | var compiledSearchTemplate = Template7.compile(searchTemplate);
-          | 
+          |
           | var listTemplate = $('script#list-template').html();
           | var compiledListTemplate = Template7.compile(listTemplate);
-          | 
+          |
           | // That is all, now and further just execute compiled templates with required context
           | // Just execute compiled search template with required content:
           | var html = compiledSearchTemplate({/*...some data...*/});
-          | 
+          |
           | // Do something with html...
-          | 
+          |
     footer
       .share-line
         | <!-- AddThis Button BEGIN -->
@@ -1009,6 +1009,5 @@ html
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
       ga('create', 'UA-13289120-11', 'idangero.us');
-      ga('send', 'pageview');      
+      ga('send', 'pageview');
 
-    
