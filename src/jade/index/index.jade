@@ -122,10 +122,10 @@ html
       pre
         code
           | var template = $$('#template').html();
-          |
+          | &nbsp;
           | // compile it with Template7
           | var compiledTemplate = Template7.compile(template);
-          |
+          | &nbsp;
           | // Now we may render our compiled template by passing required context
           | var context = {
           |     firstName: 'John',
@@ -642,10 +642,10 @@ html
           |     "inverse" - method to pass helper block inverse ({{else}}) content further to compilier
           |     "data" - contains additional expression data, like @index for arrays or @key for object
           |   */
-          |
+          | &nbsp;
           |   // First we need to check is the passed context is function
           |   if (typeof condition === 'function') condition = condition.call(this);
-          |
+          | &nbsp;
           |   // If context condition
           |   if (condition) {
           |     // We need to pass block content further to compilier with the same context and the same data:
@@ -662,12 +662,12 @@ html
           | Template7.registerHelper('join', function (arr, options) {
           |   // First we need to check is the passed arr argument is function
           |   if (typeof arr === 'function') arr = arr.call(this);
-          |
+          | &nbsp;
           |   /*
           |     Passed delimiter is in the options.hash object:
           |     console.log(options.hash) -> {delimiter: ', '}
           |   */
-          |
+          | &nbsp;
           |   // And return joined array
           |   return arr.join(options.hash.delimiter);
           | });
@@ -782,7 +782,6 @@ html
           |             name: 'Kyle',
           |             hobby: ['Travel', 'Puzzles']
           |         },
-          |
           |     ],
           |     showHobby: true
           | }
@@ -897,7 +896,7 @@ html
         code
           | // Simple template with just a partial
           | var template = '{{&gt; "comments"}}'
-          |
+          | &nbsp;
           | // Register partial
           | Template7.registerPartial(
           |     'comments',
@@ -911,10 +910,10 @@ html
           |         '{{/each}}' +
           |     '&lt;/ul&gt;'
           | );
-          |
+          | &nbsp;
           | // Compile template
           | var compiledTemplate = Template7.compile(template);
-          |
+          | &nbsp;
           | // Render template
           | var output = compiledTemplate({
           |     comments: [
@@ -966,20 +965,19 @@ html
       pre
         code
           | // Begin of your app
-          |
+          | &nbsp;
           | // Compile templates once on app load/init
           | var searchTemplate = $('script#search-template').html();
           | var compiledSearchTemplate = Template7.compile(searchTemplate);
-          |
+          | &nbsp;
           | var listTemplate = $('script#list-template').html();
           | var compiledListTemplate = Template7.compile(listTemplate);
-          |
+          | &nbsp;
           | // That is all, now and further just execute compiled templates with required context
           | // Just execute compiled search template with required content:
           | var html = compiledSearchTemplate({/*...some data...*/});
-          |
+          | &nbsp;
           | // Do something with html...
-          |
     footer
       .share-line
         | <!-- AddThis Button BEGIN -->
